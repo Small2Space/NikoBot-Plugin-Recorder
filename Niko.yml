@@ -1,1 +1,2 @@
-com.github.smallru8.plugin.recorder.Recorder
+path=com.github.smallru8.plugin.recorder.Recorder
+startPermission=local

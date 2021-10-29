@@ -14,12 +14,49 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <dependencies>
+    <dependencies>
+    <dependency>
+      <groupId>org.kohsuke</groupId>
+      <artifactId>github-api</artifactId>
+      <version>1.135</version>
+	</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>net.dv8tion</groupId>
+      <artifactId>JDA</artifactId>
+      <version>4.3.0_339</version>
+	</dependency>
+	<dependency>
+      <groupId>com.github.smallru8</groupId>
+      <artifactId>NikoBot</artifactId>
+      <version>3.6</version>
+    </dependency>
+    <dependency>
+      <groupId>org.greenrobot</groupId>
+      <artifactId>eventbus</artifactId>
+      <version>3.1.1</version>
+	</dependency>
   </dependencies>
+   <repositories>
+    <repository>
+      <id>dv8tion</id>
+      <name>m2-dv8tion</name>
+      <url>https://m2.dv8tion.net/releases</url>
+    </repository>
+  	<repository>
+  	  <id>jcenter</id>
+      <name>jcenter-bintray</name>
+      <url>https://jcenter.bintray.com</url>
+    </repository>
+    <repository>
+  		<id>Small2Space</id>
+  		<name>Small2Space</name>
+  		<url>https://raw.github.com/Small2Space/mvn-repo/master</url>
+  	</repository>
+  </repositories>
 </project>
