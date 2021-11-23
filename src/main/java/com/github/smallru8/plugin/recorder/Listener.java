@@ -6,7 +6,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 public class Listener extends ListenerAdapter{
 	
 	public void onMessageReceived(MessageReceivedEvent event) {
-		new Dialogue().WriteMsg(event.getMessage());
+		GuildMessage.saveMessage(event.getMessage());
 	}
 	
 }
