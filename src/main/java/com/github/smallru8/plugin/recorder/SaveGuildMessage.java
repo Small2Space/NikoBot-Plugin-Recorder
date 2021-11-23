@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.entities.Message;
 public class SaveGuildMessage extends SaveMessage{
 
 	public SaveGuildMessage() {
-		super("/servers");
+		super("servers/");
 	}
 
 	public void save(Message msg) {

@@ -24,9 +24,15 @@ public class SaveMessage {
 	}
 	
 	protected void saveMessageToFile(Message msg,String subPath) {
-		File f = new File(path + subPath);
+		String[] subPathLs = subPath.split("/");
+		File f = new File(path);
 		if(!f.exists())
 			f.mkdir();
+		for(int i=0;i<subPathLs.length;i++) {
+			f = new File(f,subPathLs[i]);
+			if(!f.exists())
+				f.mkdir();
+		}
 		File chDir = new File(f,msg.getChannel().getId());
 		if(!chDir.exists())
 			chDir.mkdir();
