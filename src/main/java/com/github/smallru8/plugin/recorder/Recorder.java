@@ -17,7 +17,6 @@ public class Recorder implements PluginsInterface{
 	@Override
 	public void onEnable() {
 		Core.botAPI.addEventListener(new Listener());
-		
 	}
 	
 	@Override
