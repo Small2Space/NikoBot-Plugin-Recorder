@@ -12,10 +12,19 @@ import org.skunion.smallru8.util.SHA;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.Message.Attachment;
 
-public class GuildMessage {
+public class SaveMessage {
+
+	protected String path = "servers/";
 	
-	public static void saveMessage(Message msg) {
-		File f = new File("servers/" + msg.getGuild().getId() + "/records");
+	public SaveMessage(String path) {
+		this.path = path;
+		File f = new File(path);
+		if(!f.exists())
+			f.mkdir();
+	}
+	
+	protected void saveMessageToFile(Message msg,String subPath) {
+		File f = new File(path + subPath);
 		if(!f.exists())
 			f.mkdir();
 		File chDir = new File(f,msg.getChannel().getId());
@@ -24,9 +33,6 @@ public class GuildMessage {
 		File attDir = new File(chDir,"attachments");
 		if(!attDir.exists())
 			attDir.mkdir();
-		
-		//Save format
-		//[Date][ID][Name][|attachments|] :
 		
 		Date dt = new Date();
 		SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
@@ -52,7 +58,7 @@ public class GuildMessage {
 		}
 	}
 	
-	private static String saveAttachments(Message msg,String date,File dir) {
+	protected String saveAttachments(Message msg,String date,File dir) {
 		String ret = "";
 		List<Attachment> attLs = msg.getAttachments();
 		if(!msg.getAuthor().isBot()&&!attLs.isEmpty()) {

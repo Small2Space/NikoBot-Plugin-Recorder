@@ -9,6 +9,8 @@ import com.github.smallru8.NikoBot.Core;
 public class Recorder implements PluginsInterface{
 
 	private String pluginName = "Recorder(Backgroung plugin)";
+	public static SaveGuildMessage SGM = new SaveGuildMessage();
+	public static SavePrivateMessage SPM = new SavePrivateMessage();
 	
 	@Override
 	public void onDisable() {
